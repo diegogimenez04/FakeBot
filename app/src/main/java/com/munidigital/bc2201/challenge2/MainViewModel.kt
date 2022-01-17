@@ -1,4 +1,4 @@
-package com.example.fakebot
+package com.munidigital.bc2201.challenge2
 
 import android.os.Handler
 import android.os.Looper

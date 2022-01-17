@@ -1,4 +1,4 @@
-package com.example.fakebot
+package com.munidigital.bc2201.challenge2
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,7 +6,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.fakebot.databinding.ActivityMainBinding
+import com.munidigital.bc2201.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.msEmptyView.visibility = View.VISIBLE
 
-        val viewModel:MainViewModel = ViewModelProvider(this)[MainViewModel::class.java]
+        val viewModel: MainViewModel = ViewModelProvider(this)[MainViewModel::class.java]
 
         viewModel.msListLiveData.observe(this, {
             handleEmptyView(it)

@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_above="@+id/ms_edit_text"
             android:layout_alignParentTop="true"
-            tools:context=".MainActivity">
+            tools:context=".challenge2.MainActivity">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/ms_recycler"

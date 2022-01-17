@@ -1,4 +1,4 @@
-package com.example.fakebot
+package com.munidigital.bc2201
 
 import org.junit.Test
 
