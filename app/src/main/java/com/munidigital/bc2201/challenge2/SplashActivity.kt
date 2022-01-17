@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.munidigital.bc2201.databinding.ActivitySplashBinding
@@ -21,15 +22,16 @@ class SplashActivity : AppCompatActivity() {
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val auth = Firebase.auth
+        val auth: FirebaseAuth = Firebase.auth
 
         displayAppVersion()
 
         Handler(Looper.getMainLooper()).postDelayed({
-            // TODO: Deberian comprobar si existe un usuario cargado. Si no existe deberia cargar
-            // la activity de login. Caso contrario la principal del bot
-
-            startActivity(Intent(this, LoginActivity::class.java))
+            if (auth.currentUser == null){
+                startActivity(Intent(this, LoginActivity::class.java))
+            } else {
+                startActivity(Intent(this, MainActivity::class.java))
+            }
             finish() // Agregar finish para que al volver atras se cierre la app
         }, SPLASH_DURATION)
 
