@@ -7,4 +7,5 @@
     <string name="login">Login</string>
     <string name="password">Password</string>
     <string name="splash">Splash</string>
+    <string name="logout">Logout</string>
 </resources>

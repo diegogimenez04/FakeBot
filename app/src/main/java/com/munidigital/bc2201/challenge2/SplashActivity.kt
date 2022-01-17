@@ -6,18 +6,22 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.widget.TextView
-import com.munidigital.bc2201.R
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.munidigital.bc2201.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {
 
     private val SPLASH_DURATION: Long = 2000 // Setea el tiempo del splash en ms
 
+    lateinit var binding: ActivitySplashBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = ActivitySplashBinding.inflate(layoutInflater)
+        binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val auth = Firebase.auth
 
         displayAppVersion()
 
@@ -35,7 +39,7 @@ class SplashActivity : AppCompatActivity() {
         try {
             // Obtiene el numero de version y lo carga el textview de abajo a la derecha
             val version = this.packageManager.getPackageInfo(this.packageName, 0).versionName
-            findViewById<TextView>(R.id.tv_versioname).text = version
+            binding.tvVersioname.text = version
         } catch (e: PackageManager.NameNotFoundException) {
             // Log por si falla
             e.printStackTrace()
