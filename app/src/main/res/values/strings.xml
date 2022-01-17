@@ -4,4 +4,7 @@
     <string name="write_your_message_here">Write your message here</string>
     <string name="image_for_sending_messages">Image for sending messages</string>
     <string name="email">Email</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="splash">Splash</string>
 </resources>

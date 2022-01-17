@@ -35,7 +35,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/splash" />
 
         <TextView
             android:id="@+id/tv_versioname"
@@ -46,7 +47,8 @@
             tools:text="2.4.0"
             android:gravity="end"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            android:padding="16dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
